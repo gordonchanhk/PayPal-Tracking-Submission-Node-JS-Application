@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Submit Tracking CSV
+  p CSV columns: transaction_id,tracking_number,carrier,status
+  p Carrier acceptable value: https://developer.paypal.com/docs/tracking/reference/carriers/
+  p Shipping status value: https://developer.paypal.com/docs/tracking/reference/shipping-status/
+  form(action="/submit-tracking-csv", method="post", enctype="multipart/form-data")
+    input(type="file",name="file")
+    button(type="submit") Upload CSV
